@@ -1,0 +1,10 @@
+
+<h3>Requirement:</h3>
+<div class="form-inline pt-3 pb-3" *ngIf="reqDate && reqGrp">
+  <p class="text-success pr-3">Details of Required Date: {{reqDate}} and Group: {{reqGrp}}</p>  
+</div>
+<div class="pb-3">
+  <label>Enter data to be sent:</label>
+    <input type="text" placeholder="Enter data" [(ngModel)]="childData"/>
+    <button class="btn btn-dark ml-2" (click)="send()">Send Data</button>
+</div>

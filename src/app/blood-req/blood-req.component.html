@@ -1,0 +1,34 @@
+<div class="row">
+
+ <div class="col-md-6">
+  <form #frm="ngForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="" class="col--form-label">Id</label>
+      <input class="" type="number" [(ngModel)]='request.id' name='id' class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Patient Name</label>
+      <input minlength="4" type="text" required [(ngModel)]='request.patientName' name='patientName' #patientName="ngModel" id="patientName" class="form-control">
+      <div class="text-danger" [hidden]="patientName.valid || patientName.pristine">Patient Name Required</div>
+    </div>
+    <div class="form-group">
+      <label for="">Hospital Name</label>
+      <input type="text" [(ngModel)]='request.hospName' name='hospName' class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">City</label>
+      <input type="text" [(ngModel)]='request.city' name='city' class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Required Date</label>
+      <input type="date" [(ngModel)]='request.reqdate' name='reqdate' class="form-control">
+    </div>
+    <div class="form-group">
+      <label for=""></label>
+      <input type="submit" class="btn btn-primary" value="Send Request">
+      <input type="button" class="btn btn-secondary ml-3" value="Reset">
+    </div>
+  </form>
+</div>
+ {{request | json}}
+</div>

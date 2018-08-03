@@ -1,0 +1,26 @@
+<div class="container main-body">
+  <h2 class="text-center red">Donor Details</h2>
+  <div class="">
+    <input type="text" [(ngModel)]='searchGrp' placeholder="search group" class="" [ngClass]="{'pl-3':enableCls}" (blur)="enableCls=!enableCls"/> <i class="fa fa-search" style="transform: translate(-30px,0px)"></i>
+    <p>Details of {{searchGrp}} are shown below:</p>
+  </div>
+  <p class="text-info">{{details}}</p>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Mobile Number</th>
+      <th>Blood Group</th>
+      <th>Details</th>
+    </tr>
+      <tr *ngFor="let donar of donarList | filter:'bloodGroup':searchGrp">
+        <td>{{donar.name}}</td>
+        <td>{{donar.location}}</td>
+        <td>{{donar.mobileNumber}}</td>
+        <td>{{donar.bloodGroup}}</td>
+        <td>
+          <button class="btn btn-secondary" [disabled]='!enableBtn' (click)="showDetails(donar.name)">Show Details</button>          
+        </td>
+      </tr>  
+  </table>
+</div>

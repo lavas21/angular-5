@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+    <app-header></app-header>   
+    <!--<app-donar-details></app-donar-details>
+    <app-show-request></app-show-request>
+    <app-blood-req></app-blood-req>-->
+    <div class="row">
+        <div class="col-md-3 mt-4">
+        <a class="nav-link" [routerLink]="['/details']">Donar Details</a>
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+        <a class="nav-link" [routerLink]="['/review']">Review Details</a>
+        <a class="nav-link" [routerLink]="['/request']">Blood Request</a>
+    </div>
+    <div class="col-md-9"><router-outlet></router-outlet></div>
+    </div>
+    
+    <app-footer></app-footer>
+</div>

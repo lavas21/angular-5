@@ -1,0 +1,10 @@
+.main{
+    width:80%;
+    margin:0 auto;
+}
+.zoom{
+    width1:150px;
+    transform: scale(1.2); 
+    border:2px solid #ccc;
+    transition1:width 1s;
+}

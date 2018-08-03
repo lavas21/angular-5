@@ -1,0 +1,14 @@
+<h3>Details:</h3>
+<div class="form-inline">
+  <div class="form-group mr-2">
+      <label class="col-form-label mr-1">Required Date </label> <input type="date" [(ngModel)]='reDate' class="" placeholder="Enter date"/>
+  </div>
+  <div class="form-group mr-3">
+      <label class="col-form-label mr-1">Required Group </label> <!--<input type="text" [(ngModel)]='reGrp' class="" placeholder="Enter Group"/>-->
+      <select [(ngModel)]='reGrp' class="form-control">
+          <option *ngFor="let grp of groups" [value]="grp">{{grp}}</option>
+      </select>
+  </div>
+</div>
+<p class="text-info">Parent's data: {{txtMsg}}</p>
+<app-request-details [reqGrp]="reGrp" [reqDate]="reDate" (list)="showData($event)"></app-request-details>

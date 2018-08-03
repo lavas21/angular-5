@@ -1,0 +1,20 @@
+<div class="col-md-4">
+  <h2 class="text-center red">Campaign Details:</h2>
+  
+  
+  <table class="table table-striped">
+    <tr>
+      
+      <th>Location</th>
+      <th>Date</th>
+      <th>Estimation</th>
+     
+    </tr>
+      <tr *ngFor="let camps of upcomingList | filter:'location'">
+        <td>{{camps.location | uppercase}}</td>
+        <td>{{camps.campDate | date:'medium'}}</td>
+        <td>{{camps.estimate | currency:'INR':'symbol':'5.2-2'}}</td>  
+      </tr>  
+  </table>
+</div>
+

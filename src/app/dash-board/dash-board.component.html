@@ -1,0 +1,31 @@
+<div class="container">
+  <!--<div class="row">
+  <p> Count:{{activeCount}}</p>
+  <img [src]="activeImg" alt="active count" class="col-md-4"/>
+  
+</div>-->
+  <app-banner></app-banner>
+  <div class="row">
+      <div class="card-deck col-md-4">
+        <div class="card">
+            <div class="card-header">Active Donors</div>
+            <div class="card-img-top text-center"><img [src]="activeImg" appMagnify alt="active count" width="200px" height="auto"/></div>
+            <div class="card-body">
+              <span appHighLight fontSize='1.5em' fontWeight='bold'>  Count:{{activeCount}}</span>
+              <button class="ml-2 fa fa-plus" (click)="countInc()"></button>
+              <app-reviews></app-reviews>
+              <button class="btn btn-secondary" (click)="newMsg()">check dashborad</button>
+              
+            </div>
+        </div>
+       
+      </div>
+      <div #campInfo class="col-md-4">
+          <button class="btn" (click)="add()">Add Future Comp</button>
+          <button class="btn ml-3" (click)="add1()">Add Past Comp</button>
+        show msg
+      </div>
+  </div>
+  
+  
+</div>

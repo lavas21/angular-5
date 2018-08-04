@@ -7,17 +7,23 @@
   <p class="text-info">{{details}}</p>
   <table class="table table-striped">
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th>Location</th>
       <th>Mobile Number</th>
       <th>Blood Group</th>
-      <th>Details</th>
+      <th>Patient Name</th>
+      <th>Required Date</th>
+      <th>show details</th>
     </tr>
       <tr *ngFor="let donar of donarList | filter:'bloodGroup':searchGrp">
+        <td>{{donar.id}}</td>
         <td>{{donar.name}}</td>
         <td>{{donar.location}}</td>
         <td>{{donar.mobileNumber}}</td>
         <td>{{donar.bloodGroup}}</td>
+        <td>{{donar.patientName}}</td>
+        <td>{{donar.reqdate}}</td>
         <td>
           <button class="btn btn-secondary" [disabled]='!enableBtn' (click)="showDetails(donar.name)">Show Details</button>          
         </td>

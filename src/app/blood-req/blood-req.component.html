@@ -7,13 +7,17 @@
       <input class="" type="number" [(ngModel)]='request.id' name='id' class="form-control">
     </div>
     <div class="form-group">
+        <label for="" class="col--form-label">Donor Name</label>
+        <input class="" type="text" [(ngModel)]='request.name' name='name' class="form-control">
+      </div>
+    <div class="form-group">
       <label for="">Patient Name</label>
       <input minlength="4" type="text" required [(ngModel)]='request.patientName' name='patientName' #patientName="ngModel" id="patientName" class="form-control">
       <div class="text-danger" [hidden]="patientName.valid || patientName.pristine">Patient Name Required</div>
     </div>
     <div class="form-group">
-      <label for="">Hospital Name</label>
-      <input type="text" [(ngModel)]='request.hospName' name='hospName' class="form-control">
+      <label for="">Location Name</label>
+      <input type="text" [(ngModel)]='request.location' name='location' class="form-control">
     </div>
     <div class="form-group">
       <label for="">City</label>
@@ -26,9 +30,33 @@
     <div class="form-group">
       <label for=""></label>
       <input type="submit" class="btn btn-primary" value="Send Request">
-      <input type="button" class="btn btn-secondary ml-3" value="Reset">
+      <input type="button" class="btn btn-secondary ml-3" value="Delete" (click)="delete()">
+      <input type="button" class="btn btn-secondary ml-3" value="Edit" (click)="edit()">
     </div>
   </form>
 </div>
+<table class="table table-striped">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>city</th>
+      <th>Patient Name</th>
+      <th>Required Date</th>
+      <th>show details</th>
+    </tr>
+      <tr *ngFor="let donar of donarList1 | filter:'bloodGroup':searchGrp">
+        <td>{{donar.id}}</td>
+        <td>{{donar.name}}</td>
+        <td>{{donar.location}}</td>
+        <td>{{donar.city}}</td>       
+        <td>{{donar.patientName}}</td>
+        <td>{{donar.reqdate}}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="editDetails(donar)">Edit Details</button>          
+        </td>
+      </tr>  
+  </table>
+<p>response data:{{data}}</p>
  {{request | json}}
 </div>
